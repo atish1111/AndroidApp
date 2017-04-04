@@ -4,13 +4,14 @@ package com.atish.employeeapplication.DB;
 /**
  * Created by lt-41 on 3/4/17.
  */
-import com.atish.employeeapplication.Model.Employee;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.atish.employeeapplication.Model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,14 +63,14 @@ public class EmployeeOperations {
 
     // Getting single Employee
     public Employee getEmployee(long id) {
+            Cursor cursor = database.query(EmployeeDBHandler.TABLE_EMPLOYEES, allColumns, EmployeeDBHandler.COLUMN_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
+            if (cursor != null)
+                cursor.moveToFirst();
 
-        Cursor cursor = database.query(EmployeeDBHandler.TABLE_EMPLOYEES,allColumns,EmployeeDBHandler.COLUMN_ID + "=?",new String[]{String.valueOf(id)},null,null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
+            Employee e = new Employee(Long.parseLong(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+            // return Employee
 
-        Employee e = new Employee(Long.parseLong(cursor.getString(0)),cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5));
-        // return Employee
-        return e;
+            return e;
     }
 
     public List<Employee> getAllEmployees() {

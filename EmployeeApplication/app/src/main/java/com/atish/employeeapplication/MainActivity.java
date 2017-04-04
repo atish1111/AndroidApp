@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.atish.employeeapplication.DB.EmployeeOperations;
+import com.atish.employeeapplication.Model.Employee;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -132,7 +133,9 @@ public class MainActivity extends AppCompatActivity{
                         // get user input and set it to result
                         // edit text
                         employeeOps = new EmployeeOperations(MainActivity.this);
-                        employeeOps.removeEmployee(employeeOps.getEmployee(Long.parseLong(userInput.getText().toString())));
+                        Long temp = Long.parseLong(userInput.getText().toString());
+                        Employee tempEmp = employeeOps.getEmployee(temp);
+                        employeeOps.removeEmployee(tempEmp);
                         Toast t = Toast.makeText(MainActivity.this,"Employee removed successfully!",Toast.LENGTH_SHORT);
                         t.show();
                     }
@@ -144,13 +147,16 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onResume() {
         super.onResume();
-        employeeOps.open();
+        if (employeeOps != null){
+            employeeOps.open();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        employeeOps.close();
-
+        if (employeeOps != null) {
+            employeeOps.close();
+        }
     }
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.atish.employeeapplication.delete_emp">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Employee ID"-->
+        <!--tools:layout_editor_absoluteY="0dp"-->
+        <!--tools:layout_editor_absoluteX="0dp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/emp_id"-->
+        <!--android:layout_width="6dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:paddingBottom="100px"-->
+        <!--android:paddingTop="100px"-->
+        <!--tools:layout_editor_absoluteX="8dp"-->
+        <!--tools:layout_editor_absoluteY="13dp" />-->
+    <!--<Button-->
+        <!--android:id="@+id/delete_emp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Delete Record"-->
+        <!--tools:layout_editor_absoluteY="143dp"-->
+        <!--tools:layout_editor_absoluteX="0dp" />-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="TextView"-->
+        <!--tools:layout_editor_absoluteX="122dp"-->
+        <!--tools:layout_editor_absoluteY="0dp" />-->
+    <!--<EditText-->
+        <!--android:id="@+id/emp_id"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/delete_emp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Button"-->
+        <!--tools:layout_editor_absoluteX="99dp"-->
+        <!--tools:layout_editor_absoluteY="79dp" />-->
+
+    <EditText
+        android:id="@+id/emp_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_first_name"
+        android:padding="@dimen/view_padding"
+        android:textSize="@dimen/add_edit_textsize"/>
+
+    <Button
+        android:id="@+id/delete_emp"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_padding"
+        android:text="@string/add_employee"
+        android:layout_gravity="center"/>
+</android.support.constraint.ConstraintLayout>

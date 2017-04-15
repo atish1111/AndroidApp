@@ -86,30 +86,43 @@ public class MainActivity extends AppCompatActivity{
 
 
     public void getEmpIdAndUpdateEmp(){
+        Intent i = new Intent(MainActivity.this,delete_emp.class);
+        startActivity(i);
+////                        i.putExtra(EXTRA_ADD_UPDATE, "Update");
+////                        i.putExtra(EXTRA_EMP_ID, Long.parseLong(userInput.getText().toString()));
+////                        startActivity(i);
 
-        LayoutInflater li = LayoutInflater.from(this);
-        View getEmpIdView = li.inflate(R.layout.dialog_get_emp_id, null);
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        // set dialog_get_emp_id.xml to alertdialog builder
-        alertDialogBuilder.setView(getEmpIdView);
-
-        final EditText userInput = (EditText) getEmpIdView.findViewById(R.id.editTextDialogUserInput);
-
-        // set dialog message
-        alertDialogBuilder
-                .setCancelable(false)
-                .setPositiveButton("OK",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // get user input and set it to result
-                        // edit text
-                        Intent i = new Intent(MainActivity.this,AddUpdateEmployee.class);
-                        i.putExtra(EXTRA_ADD_UPDATE, "Update");
-                        i.putExtra(EXTRA_EMP_ID, Long.parseLong(userInput.getText().toString()));
-                        startActivity(i);
-                    }
-                }).create()
-                .show();
+////        EditText empId = (EditText)findViewById(R.id.editTextDialogUserInput);
+////        int id = Integer.parseInt(empId.getText().toString());
+////        Log.d("Emp ID", empId.getText().toString());
+//
+//
+//        LayoutInflater li = LayoutInflater.from(this);
+//        View getEmpIdView = li.inflate(R.layout.dialog_get_emp_id, null);
+////        int emp_id = R.id.editTextDialogUserInput;
+//        Log.d("Emp ID>>>>>>>>>>>>", getEmpIdView.toString() );
+//
+//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+//        // set dialog_get_emp_id.xml to alertdialog builder
+//        alertDialogBuilder.setView(getEmpIdView);
+//
+//        final EditText userInput = (EditText) getEmpIdView.findViewById(R.id.editTextDialogUserInput);
+//        Log.d("EMPLOYEE ID", getEmpIdView.toString());
+//
+//        // set dialog message
+//        alertDialogBuilder
+//                .setCancelable(false)
+//                .setPositiveButton("OK",new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog,int id) {
+//                        // get user input and set it to result
+//                        // edit text
+////                        Intent i = new Intent(MainActivity.this,AddUpdateEmployee.class);
+////                        i.putExtra(EXTRA_ADD_UPDATE, "Update");
+////                        i.putExtra(EXTRA_EMP_ID, Long.parseLong(userInput.getText().toString()));
+////                        startActivity(i);
+//                    }
+//                }).create()
+//                .show();
 
     }
 
